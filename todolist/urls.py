@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import  static
 from django.contrib import admin
 from django.urls import path
-from todoapp.views import toDoAppView, newadd, deleteitem, index
+from todoapp.views import toDoAppView, newadd, deleteitem, index, deleteall
 
 
 urlpatterns = [
@@ -27,7 +27,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('todoapp/', toDoAppView, name = 'home'),
     path('addtodoitem/', newadd),
-    path('deletetodoitem/<int:it>/', deleteitem)
+    path('deletetodoitem/<int:it>/', deleteitem),
+    path('deleteallitems/', deleteall)
 ]
 
 if settings.DEBUG:

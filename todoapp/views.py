@@ -21,3 +21,7 @@ def deleteitem (request, it):
     y = TodoListItem.objects.get(id=it)
     y.delete()
     return HttpResponseRedirect('/todoapp/')
+
+def deleteall (request):
+    TodoListItem.objects.all().delete()
+    return HttpResponseRedirect('/todoapp/')
